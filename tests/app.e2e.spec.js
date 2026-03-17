@@ -1,14 +1,11 @@
 import { expect, test } from '@playwright/test'
 
-test('should render homepage and increment counter', async ({ page }) => {
+test('should request Wuhan weather and render result below the button', async ({ page }) => {
   await page.goto('/')
 
-  await expect(page.getByTestId('title')).toHaveText('Vue3 CI/CD Demo')
-
-  const button = page.getByTestId('counter-btn')
-  await expect(button).toContainText('0')
-
+  const button = page.getByTestId('weather-btn')
   await button.click()
 
-  await expect(button).toContainText('1')
+  const weatherResult = page.getByTestId('weather-result')
+  await expect(weatherResult).toContainText(/武汉当前气温\s-?\d+(\.\d+)?°C，天气代码\s\d+/)
 })

@@ -46,3 +46,20 @@ p {
 .counter:hover {
   background: #1e293b;
 }
+
+.counter:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.weather-result {
+  margin: 1rem 0 0;
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.weather-error {
+  margin: 1rem 0 0;
+  color: #b91c1c;
+  font-weight: 600;
+}
