@@ -9,8 +9,9 @@ const weatherApiUrl =
 
 const fetchWuhanWeather = async () => {
   loading.value = true
-  weatherMessage.value = ''
+  weatherMessage.value = '1234'
   errorMessage.value = ''
+  return
 
   try {
     const response = await fetch(weatherApiUrl)
